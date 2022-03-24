@@ -16,7 +16,11 @@ ADD sh_npm.sh /tmp/sh_npm.sh
 RUN apt update \
     && apt install -y \
     upx \
-    g++-mingw-w64-x86-64 g++-mingw-w64-i686
+    g++-mingw-w64-x86-64 g++-mingw-w64-i686 \
+    && apt autoremove \
+    && apt clean \ 
+    && apt autoclean \ 
+    && rm -rf /var/cache/apt/* 
 
 
 # [Optional] Uncomment the next line to use go get to install anything else you need
