@@ -15,6 +15,10 @@ go install golang.org/x/tools/gopls@latest
 echo "echo general tools"
 go install github.com/lopygo/about/cmd/aboutbuilder@latest
 
+go install golang.org/x/tools/cmd/stringer@latest
+go get github.com/go-bindata/go-bindata/...
+go get github.com/elazarl/go-bindata-assetfs/...
+
 cd $GOPATH
 rm -rf pkg src
 chown -R vscode .
