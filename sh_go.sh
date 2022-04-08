@@ -19,6 +19,10 @@ go install golang.org/x/tools/cmd/stringer@latest
 go get github.com/go-bindata/go-bindata/...
 go get github.com/elazarl/go-bindata-assetfs/...
 
+echo "other tools"
+wget -O /usr/local/bin/fetch https://github.com/gruntwork-io/fetch/releases/download/v0.4.4/fetch_linux_amd64
+chmod +x /usr/local/bin/fetch
+
 cd $GOPATH
 rm -rf pkg src
 chown -R vscode .
