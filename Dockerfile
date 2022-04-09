@@ -17,6 +17,7 @@ RUN apt update \
     && apt install -y \
     upx \
     g++-mingw-w64-x86-64 g++-mingw-w64-i686 \
+    bash-completion \
     && apt autoremove \
     && apt clean \ 
     && apt autoclean \ 
