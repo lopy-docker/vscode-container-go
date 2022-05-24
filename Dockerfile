@@ -18,6 +18,7 @@ RUN apt update \
     upx \
     g++-mingw-w64-x86-64 g++-mingw-w64-i686 \
     bash-completion \
+    protobuf-compiler \
     && apt autoremove \
     && apt clean \ 
     && apt autoclean \ 
