@@ -2,7 +2,8 @@
 apt update 
 apt install -y upx g++-mingw-w64-x86-64 g++-mingw-w64-i686 \
     bash-completion \
-    protobuf-compiler
+    protobuf-compiler \
+    clang-format
 
 # 
 apt install -y build-essential pkg-config libssl-dev libcurl4-openssl-dev
