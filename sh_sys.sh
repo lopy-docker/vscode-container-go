@@ -31,3 +31,8 @@ apt autoremove
 apt clean 
 apt autoclean 
 rm -rf /var/cache/apt/* 
+
+# user ssh dir
+mkdir /home/vscode/.ssh 
+chmod -R 0777 /home/vscode/.ssh 
+chown -R vscode:vscode /home/vscode/.ssh
