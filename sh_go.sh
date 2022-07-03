@@ -23,6 +23,7 @@ go get github.com/elazarl/go-bindata-assetfs/...
 
 echo "other tools"
 wget -O /usr/local/bin/fetch https://github.com/gruntwork-io/fetch/releases/download/v0.4.4/fetch_linux_amd64
+upx -9 /usr/local/bin/fetch
 chmod +x /usr/local/bin/fetch
 
 
