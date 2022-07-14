@@ -22,6 +22,10 @@ apt install -y upx g++-mingw-w64-x86-64 g++-mingw-w64-i686 \
     docker-ce-cli \
     clang-format
 
+
+# net tools
+apt install -y telnet dnsutils iputils-ping
+
 # 
 apt install -y build-essential pkg-config libssl-dev libcurl4-openssl-dev
 
