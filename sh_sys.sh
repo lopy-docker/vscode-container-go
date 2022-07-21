@@ -40,3 +40,5 @@ rm -rf /var/cache/apt/*
 mkdir /home/vscode/.ssh 
 chmod -R 0777 /home/vscode/.ssh 
 chown -R vscode:vscode /home/vscode/.ssh
+
+echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf
