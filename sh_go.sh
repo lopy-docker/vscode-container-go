@@ -2,7 +2,7 @@
 
 if [ "${GOPROXY}" != "" ]; then go env -w GOPROXY=${GOPROXY} ; fi
 
-echo "install go tools"
+echo "install go tools vscode required"
 go install github.com/ramya-rao-a/go-outline@latest
 go install github.com/cweill/gotests/gotests@latest
 go install github.com/fatih/gomodifytags@latest
@@ -11,6 +11,8 @@ go install github.com/haya14busa/goplay/cmd/goplay@latest
 go install github.com/go-delve/delve/cmd/dlv@latest
 go install honnef.co/go/tools/cmd/staticcheck@latest
 go install golang.org/x/tools/gopls@latest
+
+echo "install go grpc cli"
 go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 
@@ -27,7 +29,7 @@ upx -9 /usr/local/bin/fetch
 chmod +x /usr/local/bin/fetch
 
 
-
+echo "clean go pkg"
 cd $GOPATH
 rm -rf pkg src
 chown -R vscode .
