@@ -29,8 +29,8 @@ upx -9 /usr/local/bin/fetch
 chmod +x /usr/local/bin/fetch
 
 
-echo "clean go pkg"
+echo "clean go src"
 cd $GOPATH
-rm -rf pkg src
+rm -rf src
 chown -R vscode .
 cd -
