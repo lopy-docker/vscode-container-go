@@ -31,6 +31,7 @@ chmod +x /usr/local/bin/fetch
 
 echo "clean go src"
 cd $GOPATH
-rm -rf src
+#  why ???
+# rm -rf src pkg
 chown -R vscode .
 cd -
