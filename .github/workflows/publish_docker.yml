@@ -3,7 +3,7 @@ on:
   push:
     branches: [ main ]
   schedule:
-    - cron: "0 2 * * 1"
+    - cron: "45 2 1 * *"
 jobs:
   # setup:
   #   runs-on: ubuntu-latest
@@ -24,8 +24,6 @@ jobs:
     strategy:
       matrix:
         variant: 
-          - "1.16"
-          - "1.17"
           - "1.18"
           - "1.19"
     # strategy:
