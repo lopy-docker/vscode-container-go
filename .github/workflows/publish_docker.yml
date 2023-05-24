@@ -24,8 +24,8 @@ jobs:
     strategy:
       matrix:
         variant: 
-          - "1.18"
           - "1.19"
+          - "1.20"
     # strategy:
     #   matrix:
     #     value: ${{fromJson(needs.setup.outputs.matrix)}}
