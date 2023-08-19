@@ -20,8 +20,11 @@ echo "echo general tools"
 go install github.com/lopygo/about/cmd/aboutbuilder@latest
 
 go install golang.org/x/tools/cmd/stringer@latest
-go get github.com/go-bindata/go-bindata/...
-go get github.com/elazarl/go-bindata-assetfs/...
+
+go install github.com/spf13/cobra-cli@latest
+
+# go get github.com/go-bindata/go-bindata/...
+# go get github.com/elazarl/go-bindata-assetfs/...
 
 echo "other tools"
 wget -O /usr/local/bin/fetch https://github.com/gruntwork-io/fetch/releases/download/v0.4.4/fetch_linux_amd64
