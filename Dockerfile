@@ -28,9 +28,13 @@ RUN chmod +x /tmp/sh_npm.sh && su vscode -c "/tmp/sh_npm.sh" 2>&1
 RUN chmod +x /tmp/sh_tool.sh && /tmp/sh_tool.sh
 
 RUN echo "install proxychain4" \
-  && git clone https://github.com/haad/proxychains \
+  && git clone --depth=1 https://github.com/uljjmhn520/proxychains \
   && cd "proxychains" \
   && ./configure && make && make install \
+  && cd ".." \
+  && rm -rf "proxychains" \
+  && ldconfig \
   && echo "SOCKS5 proxy host ip and port in environment variable 'PROXYCHAINS_SOCKS5_HOST' and 'PROXYCHAINS_SOCKS5_PORT'"
+  
 ENV PROXYCHAINS_SOCKS5_HOST=127.0.0.1 \
   PROXYCHAINS_SOCKS5_PORT=1080
