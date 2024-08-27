@@ -26,6 +26,7 @@ echo "upx bin in /usr/local/bin"
 cd /usr/local/bin
 upx -9 solc osslsigncode
 
+
 echo "delete tmp dir"
 cd ${tmpSource}
 rm -rf ${tmpDir}
