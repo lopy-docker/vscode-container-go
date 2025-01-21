@@ -38,3 +38,5 @@ RUN echo "install proxychain4" \
   
 ENV PROXYCHAINS_SOCKS5_HOST=127.0.0.1 \
   PROXYCHAINS_SOCKS5_PORT=1080
+
+RUN su vscode -c "mkdir /home/vscode/.cache -p"
