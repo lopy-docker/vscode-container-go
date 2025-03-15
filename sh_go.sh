@@ -23,6 +23,10 @@ go install golang.org/x/tools/cmd/stringer@latest
 
 go install github.com/spf13/cobra-cli@latest
 
+# 
+curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/HEAD/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.64.7
+golangci-lint --version
+
 # go get github.com/go-bindata/go-bindata/...
 # go get github.com/elazarl/go-bindata-assetfs/...
 
