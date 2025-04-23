@@ -2,7 +2,7 @@
 # [Choice] Go version (use -bullseye variants on local arm64/Apple Silicon): 1, 1.16, 1.17, 1-bullseye, 1.16-bullseye, 1.17-bullseye, 1-buster, 1.16-buster, 1.17-buster
 # [Choice] Go version (use -bullseye variants on local arm64/Apple Silicon): 1, 1.16, 1.17, 1-bullseye, 1.16-bullseye, 1.17-bullseye, 1-buster, 1.16-buster, 1.17-buster
 ARG VARIANT=1
-FROM mcr.microsoft.com/vscode/devcontainers/go:1-${VARIANT}-bullseye
+FROM mcr.microsoft.com/vscode/devcontainers/go:1-${VARIANT}-bookworm
 
 # [Choice] Node.js version: lts/*, 16, 14, 12, 10
 ARG NODE_VERSION="lts/*"
@@ -27,16 +27,17 @@ RUN chmod +x /tmp/sh_npm.sh && su vscode -c "/tmp/sh_npm.sh" 2>&1
 
 RUN chmod +x /tmp/sh_tool.sh && /tmp/sh_tool.sh
 
-RUN echo "install proxychain4" \
-  && git clone --depth=1 https://github.com/uljjmhn520/proxychains \
-  && cd "proxychains" \
-  && ./configure && make && make install \
-  && cd ".." \
-  && rm -rf "proxychains" \
-  && ldconfig \
-  && echo "SOCKS5 proxy host ip and port in environment variable 'PROXYCHAINS_SOCKS5_HOST' and 'PROXYCHAINS_SOCKS5_PORT'"
+# deletes the script
+# RUN echo "install proxychain4" \
+#   && git clone --depth=1 https://github.com/uljjmhn520/proxychains \
+#   && cd "proxychains" \
+#   && ./configure && make && make install \
+#   && cd ".." \
+#   && rm -rf "proxychains" \
+#   && ldconfig \
+#   && echo "SOCKS5 proxy host ip and port in environment variable 'PROXYCHAINS_SOCKS5_HOST' and 'PROXYCHAINS_SOCKS5_PORT'"
   
-ENV PROXYCHAINS_SOCKS5_HOST=127.0.0.1 \
-  PROXYCHAINS_SOCKS5_PORT=1080
+# ENV PROXYCHAINS_SOCKS5_HOST=127.0.0.1 \
+#   PROXYCHAINS_SOCKS5_PORT=1080
 
 RUN su vscode -c "mkdir /home/vscode/.cache -p"
