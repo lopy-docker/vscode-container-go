@@ -2,7 +2,9 @@
 # [Choice] Go version (use -bullseye variants on local arm64/Apple Silicon): 1, 1.16, 1.17, 1-bullseye, 1.16-bullseye, 1.17-bullseye, 1-buster, 1.16-buster, 1.17-buster
 # [Choice] Go version (use -bullseye variants on local arm64/Apple Silicon): 1, 1.16, 1.17, 1-bullseye, 1.16-bullseye, 1.17-bullseye, 1-buster, 1.16-buster, 1.17-buster
 ARG VARIANT=1
-FROM mcr.microsoft.com/vscode/devcontainers/go:1-${VARIANT}-bookworm
+ARG DEBIAN_VERSION=bookworm
+# ARG DEBIAN_VERSION=bullseye
+FROM mcr.microsoft.com/vscode/devcontainers/go:1-${VARIANT}-${DEBIAN_VERSION}
 
 # [Choice] Node.js version: lts/*, 16, 14, 12, 10
 ARG NODE_VERSION="lts/*"
