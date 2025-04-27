@@ -22,10 +22,18 @@ apt update
 apt install -y docker-ce-cli docker-buildx-plugin docker-compose-plugin
 
 # gcc...
-apt install -y upx g++-mingw-w64-x86-64 g++-mingw-w64-i686 \
+apt install -y g++-mingw-w64-x86-64 g++-mingw-w64-i686 \
     bash-completion \
     protobuf-compiler \
     clang-format
+
+# install upx
+UPX_VERSION=4.2.4
+wget https://github.com/upx/upx/releases/download/v${UPX_VERSION}/upx-${UPX_VERSION}-amd64_linux.tar.xz
+tar -xvf upx-${UPX_VERSION}-amd64_linux.tar.xz
+mv upx-${UPX_VERSION}-amd64_linux/upx /usr/local/bin
+chmod +x /usr/local/bin/upx
+rm -rf upx-${UPX_VERSION}-amd64_linux*
 
 
 # net tools
