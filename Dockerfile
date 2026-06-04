@@ -6,28 +6,27 @@ ARG DEBIAN_VERSION=bookworm
 # ARG DEBIAN_VERSION=bullseye
 FROM mcr.microsoft.com/vscode/devcontainers/go:1-${VARIANT}-${DEBIAN_VERSION}
 
+ARG VARIANT
+
 # [Choice] Node.js version: lts/*, 16, 14, 12, 10
 ARG NODE_VERSION="lts/*"
 RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c ". /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
 
-ADD sh_go.sh /tmp/sh_go.sh
-ADD sh_npm.sh /tmp/sh_npm.sh
-ADD sh_sys.sh /tmp/sh_sys.sh
-ADD sh_tool.sh /tmp/sh_tool.sh
+COPY scripts /tmp/scripts
+RUN chmod -R +x /tmp/scripts
 
 
-
-RUN chmod +x /tmp/sh_sys.sh && /tmp/sh_sys.sh
+RUN /tmp/scripts/sh_sys.sh
 
 
 ARG GOPROXY=""
-RUN chmod +x /tmp/sh_go.sh && /tmp/sh_go.sh
+RUN /tmp/scripts/sh_go.sh
 
 # [Optional] Uncomment this line to install global node packages.
 # RUN  su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g commitizen cz-conventional-changelog" 2>&1
-RUN chmod +x /tmp/sh_npm.sh && su vscode -c "/tmp/sh_npm.sh" 2>&1
+RUN su vscode -c "/tmp/scripts/sh_npm.sh" 2>&1
 
-RUN chmod +x /tmp/sh_tool.sh && /tmp/sh_tool.sh
+RUN /tmp/scripts/sh_tool.sh
 
 # deletes the script
 # RUN echo "install proxychain4" \
