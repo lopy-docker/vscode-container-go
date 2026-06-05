@@ -12,6 +12,9 @@ go install github.com/go-delve/delve/cmd/dlv@latest
 go install honnef.co/go/tools/cmd/staticcheck@latest
 go install golang.org/x/tools/gopls@latest
 
+# 
+curl -fsSL https://antigravity.google/cli/install.sh | bash -s -- --dir /usr/local/bin
+
 # Determine which version script to source based on VARIANT
 VERSION_SCRIPT="${VARIANT}.sh"
 
@@ -27,6 +30,7 @@ echo "echo general tools"
 go install github.com/lopygo/about/cmd/aboutbuilder@latest
 go install golang.org/x/tools/cmd/stringer@latest
 go install github.com/spf13/cobra-cli@latest
+
 
 echo "other tools"
 wget -O /usr/local/bin/fetch https://github.com/gruntwork-io/fetch/releases/download/v0.4.4/fetch_linux_amd64
