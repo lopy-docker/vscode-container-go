@@ -6,3 +6,4 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 # wrangler
 npm install -g wrangler
 npm install -g @google/gemini-cli
+npm install -g @colbymchenry/codegraph
