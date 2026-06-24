@@ -57,6 +57,8 @@ dpkg -i hugo_extended_${HUGO_VERSION}_linux-amd64.deb
 
 rm -rf /tmp/*.deb
 
+curl -fsSL https://antigravity.google/cli/install.sh | bash -s -- --dir /usr/local/bin
+
 # auto remove
 echo "clear apt"
 apt autoremove 

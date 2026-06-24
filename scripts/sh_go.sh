@@ -13,7 +13,6 @@ go install honnef.co/go/tools/cmd/staticcheck@latest
 go install golang.org/x/tools/gopls@latest
 
 # 
-curl -fsSL https://antigravity.google/cli/install.sh | bash -s -- --dir /usr/local/bin
 
 # Determine which version script to source based on VARIANT
 VERSION_SCRIPT="${VARIANT}.sh"
