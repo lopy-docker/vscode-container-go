@@ -27,7 +27,7 @@ fi
 
 echo "echo general tools"
 go install github.com/lopygo/about/cmd/aboutbuilder@latest
-go install golang.org/x/tools/cmd/stringer@latest
+# go install golang.org/x/tools/cmd/stringer@latest
 go install github.com/spf13/cobra-cli@latest
 
 
